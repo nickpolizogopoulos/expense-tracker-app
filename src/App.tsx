@@ -3,14 +3,14 @@ import Filter from "./components/Filter"
 import Form from "./components/Form"
 import List from "./components/List"
 import Heading from "./components/Heading"
-
-
+import uniqueId from "./services/uniqueid"
 
 const App = () => {
   const [selectedCategory, setSelectedCategory] = useState('');
 
   const [expenses, setExpenses] = useState([
-    {id: 1, description: 'Jacket', amount: 50, category: 'Clothing'}
+    {id: uniqueId(5), description: 'Jacket', amount: 150, category: 'Clothing'},
+    {id: uniqueId(5), description: 'Computer', amount: 1500, category: 'Entertainment'}
   ]);
 
 const visibleExpenses = selectedCategory
@@ -19,12 +19,13 @@ const visibleExpenses = selectedCategory
 
   return (
   <>
-    <div className='mb-4'>
-    <Heading>Expense Tracker</Heading>
+  <div className="card">
+    <div className='mb-2'>
+      <Heading>Expense Tracker</Heading>
     </div>
 
     <div className="mb-4">
-      <Form onSubmit={expense => setExpenses( [...expenses, {...expense, id: expenses.length + 1 }] )}></Form>
+      <Form onSubmit={expense => setExpenses( [...expenses, {...expense, id: uniqueId(5) }] )}></Form>
     </div>
 
     <div className="mb-3">
@@ -34,6 +35,7 @@ const visibleExpenses = selectedCategory
     <div>
       <List expenses={visibleExpenses} onDelete={(id) => setExpenses(expenses.filter(e => e.id !== id) )} ></List>
    </div>
+  </div>
   </>
   )
 }
