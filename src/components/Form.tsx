@@ -28,8 +28,9 @@ const Form = ( {onSubmit}:Props ) => {
 
   return (
     <>
-    <div id="passwordHelpBlock" className="form-text mb-3" >
-        Fill the form with an item, all fields are required*
+    <div className="form-text mb-3">
+        <p>Use the form to add an item in the list below,
+            all fields are required(<span className='text-danger'>*</span>)</p>
     </div>
     <form onSubmit={handleSubmit( data => {
         onSubmit(data);
