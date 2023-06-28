@@ -20,7 +20,7 @@ const visibleExpenses = selectedCategory
   return (
   <>
   <div className="card">
-    <div className='mb-2'>
+    <div className='mb-4'>
       <Heading>Expense Tracker</Heading>
     </div>
 

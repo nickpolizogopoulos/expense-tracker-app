@@ -29,7 +29,7 @@ const Form = ( {onSubmit}:Props ) => {
   return (
     <>
     <div id="passwordHelpBlock" className="form-text mb-3" >
-        Fill the form with a new item, all fields are required*
+        Fill the form with an item, all fields are required*
     </div>
     <form onSubmit={handleSubmit( data => {
         onSubmit(data);
